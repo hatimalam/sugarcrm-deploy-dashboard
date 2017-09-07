@@ -12,16 +12,18 @@
 
 
 $manifest = array (
-  'acceptable_sugar_versions' => 
+  'acceptable_sugar_versions' =>
   array (
     0 => '7.9.*',
   ),
-  'acceptable_sugar_flavors' => 
+  'acceptable_sugar_flavors' =>
   array (
     0 => 'ENT',
     1 => 'ULT',
   ),
-  'readme' => '',
+  'readme' => "This plugin helps copying one user's dashboards with other users of the SugarCRM. Template can be created and deployed only by admin users, regular users cannot access this module. Feel free to modify the codebase to enhance the features.
+Initially written by: Hatim Alam
+Email: hatimalam@gmail.com",
   'key' => 'hats',
   'author' => 'Hatim Alam',
   'description' => 'This package contains module to copy one user dashboards to other user(s) easily via selection list.',
@@ -37,9 +39,9 @@ $manifest = array (
 
 $installdefs = array (
   'id' => 'Easy Share Dashboard',
-  'beans' => 
+  'beans' =>
   array (
-    0 => 
+    0 =>
     array (
       'module' => 'hats_DashboardTemplate',
       'class' => 'hats_DashboardTemplate',
@@ -47,16 +49,16 @@ $installdefs = array (
       'tab' => false,
     ),
   ),
-  'relationships' => 
+  'relationships' =>
   array (
-    0 => 
+    0 =>
     array (
       'meta_data' => '<basepath>/custom/metadata/hats_dashboardtemplate_usersMetaData.php',
     ),
   ),
-  'copy' => 
+  'copy' =>
   array (
-    0 => 
+    0 =>
     array (
       'from' => '<basepath>/modules/hats_DashboardTemplate',
       'to' => 'modules/hats_DashboardTemplate',

@@ -1,0 +1,7 @@
+This plugin helps copying one user's dashboards with other users of the SugarCRM.
+Template can be created and deployed only by admin users, regular users cannot access this module.
+Feel free to modify the codebase to enhance the features.
+
+Initially written by: Hatim Alam
+Email: hatimalam@gmail.com
+

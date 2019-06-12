@@ -15,3 +15,4 @@ $mod_strings['LBL_OVERWRITE_CONFIRMATION_MESSAGE'] = 'This action will remove al
 $mod_strings['LBL_SUCCESSFULLY_COPIED_MESSAGE'] = 'Dashboard(s) copied successfully';
 $mod_strings['LBL_COPY_OPERATION_CANCELLED'] = 'Operation Cancelled';
 $mod_strings['LBL_COPY_OPERATION_CANCELLED_MSG'] = 'Dashboard copy operation cancelled';
+$mod_strings['LBL_ERROR_INVALID_DEPLOY_TYPE'] = 'Cannot identify the type of deployment, please contact your administrator.';

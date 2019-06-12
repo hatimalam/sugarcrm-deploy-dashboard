@@ -1,6 +1,8 @@
 <?php
 
-$mod_strings['LBL_DEPLOY_TEMPLATE_BUTTON'] = 'Deploy Template to User(s)';
+$mod_strings['LBL_DEPLOY_TEMPLATE_USER_BUTTON'] = 'Deploy Template to User(s)';
+$mod_strings['LBL_DEPLOY_TEMPLATE_TEAM_BUTTON'] = 'Deploy Template to Team(s)';
+$mod_strings['LBL_DEPLOY_TEMPLATE_ROLE_BUTTON'] = 'Deploy Template to Role(s)';
 $mod_strings['LBL_MODULE_LIST'] = 'Select Module';
 $mod_strings['LBL_VIEW_NAME'] = 'View Name';
 $mod_strings['LBL_ASSIGNED_TO'] = 'Primary User';

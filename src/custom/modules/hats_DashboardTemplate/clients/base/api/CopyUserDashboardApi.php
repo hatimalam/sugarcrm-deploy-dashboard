@@ -23,44 +23,58 @@ class CopyUserDashboardApi extends SugarApi
     public function copyUserDashboard($api, $args)
     {
         global $timedate, $db;
-        $this->requireArgs($args, array('primary_user', 'secondary_users', 'template_id'));
+        $this->requireArgs($args, array('deploy_type', 'secondary_records', 'template_id'));
+        $GLOBALS['log']->fatal("Args are: ".print_r($args,true));
 
-        $primary_user_id = $args['primary_user'];
-        $secondary_user_ids = $args['secondary_users'];
         $this->template = BeanFactory::getBean("hats_DashboardTemplate", $args['template_id']);
-        if($this->template->id == '')
-        {
+        if(!empty($this->template->id)) {
+            $primary_user_id = $this->template->assigned_user_id;
+            //get users for the deployment
+            $secondary_user_ids = $this->getSecondaryUsers($args['deploy_type'], $args['secondary_records']);
+        } else {
             return false;
         }
-        //create where clause
-        $this->where = " AND dashboard_module='{$this->template->module_list}'";
-        if($this->template->view_name != '')
-        {
-            $view_name = str_replace("^", "'", $this->template->view_name);
-            $this->where .= " AND view_name IN (".$view_name.")";
-        }
+        
+        // if($this->template->id == '')
+        // {
+        //     return false;
+        // }
+        // //create where clause
+        // $this->where = " AND dashboard_module='{$this->template->module_list}'";
+        // if($this->template->view_name != '')
+        // {
+        //     $view_name = str_replace("^", "'", $this->template->view_name);
+        //     $this->where .= " AND view_name IN (".$view_name.")";
+        // }
 
-        if(($key = array_search($primary_user_id, $secondary_user_ids)) !== FALSE)
-        {
-            unset($secondary_user_ids[$key]);
-        }
-        $dashboard_data = $this->getPrimaryUserDashboards($primary_user_id);
-        if(!empty($dashboard_data))
-        {
-            //delete existing data and populate new dashboards
-            foreach($secondary_user_ids as $user_id)
-            {
-                $this->deleteExistingDashboards($user_id);
-                $this->insertNewDashboards($user_id, $dashboard_data);
-                //relate this user to dashboard template
-                $this->template->load_relationship('hats_dashboardtemplate_users');
-                $this->template->hats_dashboardtemplate_users->add($user_id);
-            }
-            return array('success' => true, 'message' => 'Dashboards successfully updated.');
-        } else
-        {
-            return array('success' => true, 'message' => 'No records found.');
-        }
+        // if(($key = array_search($primary_user_id, $secondary_user_ids)) !== FALSE)
+        // {
+        //     unset($secondary_user_ids[$key]);
+        // }
+        // $dashboard_data = $this->getPrimaryUserDashboards($primary_user_id);
+        // if(!empty($dashboard_data))
+        // {
+        //     //delete existing data and populate new dashboards
+        //     foreach($secondary_user_ids as $user_id)
+        //     {
+        //         $this->deleteExistingDashboards($user_id);
+        //         $this->insertNewDashboards($user_id, $dashboard_data);
+        //         //relate this user to dashboard template
+        //         $this->template->load_relationship('hats_dashboardtemplate_users');
+        //         $this->template->hats_dashboardtemplate_users->add($user_id);
+        //     }
+        //     return array('success' => true, 'message' => 'Dashboards successfully updated.');
+        // } else
+        // {
+        //     return array('success' => true, 'message' => 'No records found.');
+        // }
+    }
+
+
+    protected function getSecondaryUsers($deploy_type, $secondary_records)
+    {
+        $secondary_users = array();
+        return $secondary_users;
     }
 
 

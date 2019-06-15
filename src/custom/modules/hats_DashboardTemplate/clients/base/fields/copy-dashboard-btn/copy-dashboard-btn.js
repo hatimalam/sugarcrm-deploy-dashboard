@@ -47,11 +47,9 @@
     			url = app.api.buildURL('hats_DashboardTemplate', 'copyUserDashboard', {}, {}),
                 value = {template_id: template_id, deploy_type:this.deployType, selected_records:selected_records};
             app.api.call('create', url, value, {
-                success: function(data)
-                {
-                    if(data.success)
-                    {
-                        app.alert.dismiss('copy_dashboard_inprogress');
+                success: function(data) {
+                    app.alert.dismiss('copy_dashboard_inprogress');
+                    if(data.success) {
                         console.log(data);
                         app.alert.show('dashboard_copy_success', {
                             level: 'success',
@@ -60,6 +58,12 @@
                         });
                         //refresh the user subpanel
                         self.model.getRelatedCollection('hats_dashboardtemplate_users').fetch({relate:true});
+                    } else {
+                        app.alert.show('dasboard_template_error', {
+                            level: 'error',
+                            messages: app.lang.get('LBL_DASHBOARD_TEMPLATE_ERROR', self.module),
+                            autoClose: false
+                        });
                     }
                 },
                 error: function(err)

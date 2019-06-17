@@ -24,8 +24,14 @@ $viewdefs[$module_name]['base']['view']['selection-list'] = array(
                     'link' => true,
                 ),
                 array(
-                    'name' => 'team_name',
-                    'label' => 'LBL_TEAM',
+                    'name' => 'module_list',
+                    'label' => 'LBL_MODULE_LIST',
+                    'default' => true,
+                    'enabled' => true,
+                ),
+                array(
+                    'name' => 'view_name',
+                    'label' => 'LBL_VIEW_NAME',
                     'default' => true,
                     'enabled' => true,
                 ),

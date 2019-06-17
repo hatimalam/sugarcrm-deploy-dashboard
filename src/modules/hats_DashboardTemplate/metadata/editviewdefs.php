@@ -27,10 +27,6 @@ $viewdefs[$module_name]['EditView'] = array(
       'name',
       'assigned_user_name',
     ),
-    array (
-      array('name'=>'team_name', 'displayParams'=>array('display'=>true)),
-      ''
-    ),
     
     array (
       'description',

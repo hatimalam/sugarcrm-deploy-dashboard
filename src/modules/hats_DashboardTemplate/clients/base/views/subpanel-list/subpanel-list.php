@@ -26,6 +26,18 @@ $viewdefs[$module_name]['base']['view']['subpanel-list'] = array(
           'link' => true,
         ),
         array(
+          'name' => 'module_list',
+          'label' => 'LBL_MODULE_LIST',
+          'enabled' => true,
+          'default' => true,
+        ),
+        array(
+          'name' => 'view_name',
+          'label' => 'LBL_VIEW_NAME',
+          'enabled' => true,
+          'default' => true,
+        ),
+        array(
           'label' => 'LBL_DATE_MODIFIED',
           'enabled' => true,
           'default' => true,

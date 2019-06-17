@@ -26,10 +26,6 @@ $viewdefs[$module_name]['DetailView'] = array(
     'name',
     'assigned_user_name',
   ),
-  array (
-
-    'team_name',''
-  ),
 
   array (
 	array (

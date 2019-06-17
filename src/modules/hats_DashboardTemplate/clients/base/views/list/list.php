@@ -24,10 +24,16 @@ $viewdefs[$module_name]['base']['view']['list'] = array(
                     'link' => true,
                 ),
                 array(
-                    'name' => 'team_name',
-                    'label' => 'LBL_TEAM',
-                    'default' => false,
+                    'name' => 'module_list',
+                    'label' => 'LBL_MODULE_LIST',
                     'enabled' => true,
+                    'default' => true,
+                ),
+                array(
+                    'name' => 'view_name',
+                    'label' => 'LBL_VIEW_NAME',
+                    'enabled' => true,
+                    'default' => true,
                 ),
                 array(
                     'name' => 'assigned_user_name',

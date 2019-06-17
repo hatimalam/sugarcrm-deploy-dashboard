@@ -29,7 +29,6 @@ $viewdefs[$module_name]['QuickCreate'] = array(
     ),
     array (
 	  'description',
-      array('name'=>'team_name', 'displayParams'=>array('display'=>true)),
     ),
   ),
                                                     

@@ -45,26 +45,6 @@ $viewdefs[$module_name]['base']['view']['record'] = array(
                     'acl_action' => 'edit',
                 ),
                 array(
-                    'type' => 'shareaction',
-                    'name' => 'share',
-                    'label' => 'LBL_RECORD_SHARE_BUTTON',
-                    'acl_action' => 'view',
-                ),
-                array(
-                    'type' => 'pdfaction',
-                    'name' => 'download-pdf',
-                    'label' => 'LBL_PDF_VIEW',
-                    'action' => 'download',
-                    'acl_action' => 'view',
-                ),
-                array(
-                    'type' => 'pdfaction',
-                    'name' => 'email-pdf',
-                    'label' => 'LBL_PDF_EMAIL',
-                    'action' => 'email',
-                    'acl_action' => 'view',
-                ),
-                array(
                     'type' => 'divider',
                 ),
                 array(
@@ -83,11 +63,31 @@ $viewdefs[$module_name]['base']['view']['record'] = array(
                     'acl_action' => 'create',
                 ),
                 array(
-                    'type' => 'rowaction',
-                    'event' => 'button:audit_button:click',
-                    'name' => 'audit_button',
-                    'label' => 'LNK_VIEW_CHANGE_LOG',
+                    'type' => 'divider',
+                ),
+                array(
+                    'name' => 'deploy_template_user_btn',
+                    'type' => 'copy-dashboard-btn',
+                    'label' => 'LBL_DEPLOY_TEMPLATE_USER_BUTTON',
+                    'event' => 'button:deploy_template_user_btn:click',
                     'acl_action' => 'view',
+                    'deploy_type' => 'Users',
+                ),
+                array(
+                    'name' => 'deploy_template_team_btn',
+                    'type' => 'copy-dashboard-btn',
+                    'label' => 'LBL_DEPLOY_TEMPLATE_TEAM_BUTTON',
+                    'event' => 'button:deploy_template_team_btn:click',
+                    'acl_action' => 'view',
+                    'deploy_type' => 'Teams',
+                ),
+                array(
+                    'name' => 'deploy_template_role_btn',
+                    'type' => 'copy-dashboard-btn',
+                    'label' => 'LBL_DEPLOY_TEMPLATE_ROLE_BUTTON',
+                    'event' => 'button:deploy_template_role_btn:click',
+                    'acl_action' => 'view',
+                    'deploy_type' => 'ACLRoles',
                 ),
                 array(
                     'type' => 'divider',
@@ -144,10 +144,20 @@ $viewdefs[$module_name]['base']['view']['record'] = array(
             'labelsOnTop' => true,
             'placeholders' => true,
             'fields' => array(
-                'assigned_user_name',
-                'team_name',
                 array(
-                    'name' => 'tag',
+                    'name' => 'module_list',
+                    'comment' => 'List of modules',
+                    'label' => 'LBL_MODULE_LIST',
+                ),
+                array(
+                    'name' => 'view_name',
+                    'comment' => 'View types',
+                    'label' => 'LBL_VIEW_NAME',
+                ),
+                'assigned_user_name',
+                array(),
+                array(
+                    'name' => 'description',
                     'span' => 12,
                 ),
             ),
@@ -161,7 +171,7 @@ $viewdefs[$module_name]['base']['view']['record'] = array(
             'placeholders' => true,
             'fields' => array(
                 array(
-                    'name' => 'description',
+                    'name' => 'tag',
                     'span' => 12,
                 ),
                 array(
@@ -204,5 +214,8 @@ $viewdefs[$module_name]['base']['view']['record'] = array(
                 ),
             ),
         ),
+    ),
+    'templateMeta' => array(
+        'useTabs' => false,
     ),
 );

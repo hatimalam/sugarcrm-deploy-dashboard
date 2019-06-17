@@ -21,16 +21,7 @@ class hats_DashboardTemplate_sugar extends Basic {
     public $module_dir = 'hats_DashboardTemplate';
     public $object_name = 'hats_DashboardTemplate';
     public $table_name = 'hats_dashboardtemplate';
-    public $importable = true;
-    public $team_id;
-    public $team_set_id;
-    public $acl_team_set_id;
-    public $team_count;
-    public $team_name;
-    public $acl_team_names;
-    public $team_link;
-    public $team_count_link;
-    public $teams;
+    public $importable = false;
     public $assigned_user_id;
     public $assigned_user_name;
     public $assigned_user_link;

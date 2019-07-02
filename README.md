@@ -19,3 +19,10 @@ NOTE: This project has been developed on Sugar 7.9.0.0 using a WAMP stack.
 - Select users for whom you want to apply this template to
 - Confirm if you are OK to overwrite the users existing dashboards
 - Once confirmed, the template will be applied to selected users
+
+# New Features:
+- Now user can deploy dashboards to the selected teams and roles
+- Once a team or a role is selected, dashboard template will be copied to all the associated users of a selected team or role
+- Release is compatible with Sugar 8.x and 9.x
+
+Please download the module loader installable package from the Release section tagged v2.0

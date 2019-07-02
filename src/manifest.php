@@ -15,6 +15,8 @@ $manifest = array (
   'acceptable_sugar_versions' =>
   array (
     0 => '7.9.*',
+    1 => '8.*',
+    2 => '9.*',
   ),
   'acceptable_sugar_flavors' =>
   array (
@@ -30,9 +32,9 @@ Email: hatimalam@gmail.com",
   'icon' => '',
   'is_uninstallable' => true,
   'name' => 'Easy Share Dashboard',
-  'published_date' => '2017-08-24 18:15:00',
+  'published_date' => '2019-07-02 13:52:53',
   'type' => 'module',
-  'version' => '1.0',
+  'version' => '2.0',
   'remove_tables' => 'prompt',
 );
 
